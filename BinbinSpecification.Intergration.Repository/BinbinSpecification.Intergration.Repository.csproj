@@ -4,13 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85484383-4A2A-44A6-AD38-A05F393B49CD}</ProjectGuid>
+    <ProjectGuid>{EA05C7E9-02EA-4DAE-9836-C310D54A1729}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BinbinSpecification</RootNamespace>
-    <AssemblyName>BinbinSpecification</AssemblyName>
+    <RootNamespace>BinbinSpecification.Intergration.Repository</RootNamespace>
+    <AssemblyName>BinbinSpecification.Intergration.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BinbinRepository">
+      <HintPath>..\packages\BinbinRepository.1.0.0.1\lib\net40\BinbinRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="BinbinSpecification">
+      <HintPath>..\packages\BinbinSpecification.1.0.0.0\lib\net40\BinbinSpecification.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,22 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndSpecification.cs" />
-    <Compile Include="Generic\AndSpecification.cs" />
-    <Compile Include="CompositeSpecification.cs" />
-    <Compile Include="Generic\ExtensionMethods.cs" />
-    <Compile Include="Generic\ISpecification.cs" />
-    <Compile Include="Generic\NotSpecification.cs" />
-    <Compile Include="Generic\OrSpecification.cs" />
-    <Compile Include="ISpecification.cs" />
-    <Compile Include="NotSpecification.cs" />
-    <Compile Include="OrSpecification.cs" />
+    <Compile Include="SpecificationRepositoryExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BinbinSpecification.nuspec" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
