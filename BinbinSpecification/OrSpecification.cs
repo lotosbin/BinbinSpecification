@@ -1,19 +1,15 @@
-﻿namespace BinbinSpecification
-{
-    public class OrSpecification : CompositeSpecification
-    {
-        private ISpecification One;
-        private ISpecification Other;
+﻿namespace BinbinSpecification {
+    public class OrSpecification : CompositeSpecification {
+        private readonly ISpecification _one;
+        private readonly ISpecification _other;
 
-        public OrSpecification(ISpecification x, ISpecification y)
-        {
-            One = x;
-            Other = y;
+        public OrSpecification(ISpecification x, ISpecification y) {
+            _one = x;
+            _other = y;
         }
 
-        public override bool IsSatisfiedBy(object candidate)
-        {
-            return One.IsSatisfiedBy(candidate) || Other.IsSatisfiedBy(candidate);
+        public override bool IsSatisfiedBy(object candidate) {
+            return _one.IsSatisfiedBy(candidate) || _other.IsSatisfiedBy(candidate);
         }
     }
 }
