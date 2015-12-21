@@ -50,6 +50,16 @@
     <Compile Include="NotSpecification.cs" />
     <Compile Include="OrSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="v2\AddSpecification2.cs" />
+    <Compile Include="Generic\CompositeSpecification.cs" />
+    <Compile Include="v2\CompositeSpecification2.cs" />
+    <Compile Include="v2\ExpressionBuilder.cs" />
+    <Compile Include="Generic\ICompsiteSpecification.cs" />
+    <Compile Include="v2\ISpecification2.cs" />
+    <Compile Include="v2\NotSpecification2.cs" />
+    <Compile Include="v2\OrSpecification2.cs" />
+    <Compile Include="v2\ParameterRebinder.cs" />
+    <Compile Include="v2\Specification2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BinbinSpecification.nuspec" />
